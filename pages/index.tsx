@@ -52,11 +52,11 @@ export default function Home() {
     <section
       className={`flex min-h-screen flex-col items-center md:justify-center p-24 px-2`}
     >
-      <div className="relative w-full max-w-[500px]">
+      <main className="relative w-full max-w-[500px]">
         <p className="text-sm font-light">
           {activeQuestionNumber + 1} / {questions?.length}
         </p>
-        <h1 className="text-2xl">{activeQuestion?.question}</h1>
+        <header className="text-2xl">{activeQuestion?.question}</header>
         <ul className="min-h-[10rem] mt-2">
           {activeQuestion?.options.map((opt, idx) => (
             <li
@@ -76,6 +76,7 @@ export default function Home() {
             </li>
           ))}
         </ul>
+        {/* Buttons */}
         <div className="w-[full] flex justify-between mt-5">
           <button
             disabled={activeQuestionNumber === 0}
@@ -102,7 +103,7 @@ export default function Home() {
             </button>
           )}
         </div>
-      </div>
+      </main>
     </section>
   );
 }
