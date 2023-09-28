@@ -12,7 +12,7 @@ function Result() {
 
   const handlePlayAgain = () => {
     resetAnswers();
-    router.push("/");
+    router.replace("/");
   };
 
   useEffect(() => {
