@@ -12,6 +12,8 @@ export type TQuizQuestions = {
 type TAnswers = { questionId: string; answerIndex: number; isCorrect: boolean };
 
 export type TDataStore = {
+  questionsLoading: boolean;
+  setQuestionsLoading: (value: boolean) => void;
   questions: TQuizQuestions[] | null;
   setQuestions: (value: TQuizQuestions[]) => void;
   answers: TAnswers[];
@@ -23,6 +25,9 @@ const store = (
   set: StoreApi<TDataStore>["setState"],
   get: StoreApi<TDataStore>["getState"]
 ): TDataStore => ({
+  questionsLoading: false,
+  setQuestionsLoading: (value: boolean) =>
+    set(() => ({ questionsLoading: value })),
   questions: null,
   setQuestions: (value) => set(() => ({ questions: value })),
   answers: [],
